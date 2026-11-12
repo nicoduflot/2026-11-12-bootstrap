@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +14,61 @@
     <link rel="stylesheet" href="./css/bootstrap.css" media="all" />
     <script language="javascript" src="./js/bootstrap.bundle.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <div>
-            <h1>Formation Bootstrap<small>Responsive Web Design</small></h1>
+    <header class="bg-dark text-white" data-bs-theme="dark">
+        <div class="container">
+            <h1 class="mb-0">Formation Bootstrap <small>Responsive Web Design</small></h1>
         </div>
     </header>
     <!-- intégrer navigation de bootstrap -->
-    <main>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
         <section id="toc">
             <aside>
                 <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#reboot-css">Reboot CSS</a></li>
+                    <li><a href="#les-tableaux">Les tableaux</a></li>
                     <li><a href="#"></a></li>
                 </ul>
             </aside>
@@ -33,18 +76,164 @@
         <section>
             <div class="">
                 <article>
-                    <header id="">
-                        <h2></h2>
+                    <header id="reboot-css">
+                        <h2>Reboot CSS</h2>
                     </header>
-                    <p></p>
+                    <p>
+                        La première partie du CSS cde bootstrap est un "reboot", c'est un dire toute une partie CSS qui
+                        permet de remettre en mode web et accessible les éléments normalement couvert par le CSS du
+                        navigateur, qui n'est pas accessible par défaut.
+                    </p>
+                    <p>
+                        La police de caratère est modifiée, passant d'une police à empatement non adaptée à l'affichage
+                        à l'écran par une police sans empatement. La taille de la police par défaut est augmentée ainsi
+                        que l'interligne.
+                    </p>
+                    <p>
+                        Tous les éléments sont par défaut mis en calcul de taille avec les bordures, alors que le CSS
+                        navigateur gère les tailles des éléments par leur contenu. De plus, la marge extérieure de body
+                        est supprimée.
+                    </p>
+                    <p>
+                        Premièrement, il gère les titres, puis les paragraphes sont modifiés.
+                    </p>
+                    <p>
+                        Les <a href="#">liens</a> sont modifiés.
+                    </p>
+                    <p>
+                        Le séparateur horizontal : 
+                    </p>
+                    <hr />
+                    <p>
+                        Il est possible de lui indique une couleur différente en allant puiser dans les classes de
+                        couleur de bordure fournies par Bootstrap
+                    </p>
+                    <hr class="border border-danger" />
+                    <hr class="border border-primary" />
+                    <hr class="border border-warning" />
+                    <hr class="border border-success" />
+                    <p>
+                        Les listes ordonnées et non-ordonnées ont aussi été modifiées
+                    </p>
+                    <ul>
+                        <li>La marge extérieur haute est supprimée</li>
+                        <li>la marge intérieure gauche est retirée</li>
+                        <li>
+                            Les listes comprises dans les éléments de liste n'ont pas de margin intérieure basse
+                            <ul>
+                                <li>Sous élément d'une sous liste</li>
+                                <li>Sous élément d'une sous liste</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ol>
+                        <li>Dans une liste ordonnée</li>
+                        <li>Les mêmes changements que dans la liste non-ordonnée</li>
+                        <li>
+                            Même avec un élément de liste contenant une sous liste
+                            <ol type="A">
+                                <li>élément de sous-liste</li>
+                                <li>élément de sous-liste</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p>
+                        Les liste de description ont aussi été modifiées
+                    </p>
+                    <dl>
+                        <dt>
+                            Les listes de descriptions :
+                        </dt>
+                        <dd>
+                            Elles permettent de directement définir les élément d'une liste
+                        </dd>
+                        <dt>
+                            Elles s'utilisent :
+                        </dt>
+                        <dd>
+                            Comme les listes normales, à l'extérieur des paragraphes
+                        </dd>
+                    </dl>
+                    <p>
+                        Les blocs de code doivent échapper les chevrons, et il faut utiliser la balise
+                        <code>&lt;pre&gt;</code> pour passer à la ligne
+                    </p>
+                    <code><pre>&lt;p&gt;un petit paragraphe&lt;/p&gt;<br />&lt;p&gt;un autre petit paragraphe&lt;/p&gt;</pre></code>
+                    <p>
+                        Les blocs de citation, pour suivre les spécifications HTML, devraient être écrits ainsi :<br />
+                        L'attribution du bloc de citation doit être fait en dehors de ce block, en utilisant la balise
+                        <code>&lt;figure&gt;</code> pour encapsuler le tout, on crée une entité de référencement propre
+                        ainsi qu'un affichage ayant du sens visuellement.<br />
+                        la balise <code>&lt;figcaption&gt;</code> à l'intérieur de laquelle on indique la source de la
+                        citation à l'aide de la balise <code>&lt;cite&gt;</code> permet d'associer la source à la
+                        citation en référencement.
+                    </p>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>
+                                <q cite="https://qqcitations.com/citation/147195">Marcher d’un même pas c'est l'objectif du despotisme et de la tyranie. Les hommes libres,
+                                eux, vont dans tout les sens.</q>
+                            </p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Seigneur Vétérini dans le roman<cite title='"la vérité" par Terry Pratchett'>"La vérité" de Terry Pratchett</cite>
+                        </figcaption>
+                    </figure>
                 </article>
             </div>
             <div class="">
                 <article>
-                    <header id="">
-                        <h2></h2>
+                    <header id="les-tableaux">
+                        <h2>Les tableaux</h2>
                     </header>
-                    <p></p>
+                    <p>
+                        Le reboot css de Bootstrap règle les problèmes d'affichage des tableaux dûs au CSS du navigateur. En ajoutant la classe "table", la présentation de base est améliorée.
+                    </p>
+                    <table class="table table-success table-striped">
+                        <caption>Liste des users admin</caption>
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Prénom</th>
+                                <th>Nom</th>
+                                <th>Login</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Nicolas</td>
+                                <td>Duflot</td>
+                                <td>nduflot</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Michel</td>
+                                <td>Mulot</td>
+                                <td>mmulot</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Darren</td>
+                                <td>Arronosky</td>
+                                <td>darronosky</td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>Bugs</td>
+                                <td>bunny</td>
+                                <td>bbunny</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="bg-success bg-gradient">N°</th>
+                                <th class="bg-success bg-gradient">Prénom</th>
+                                <th class="bg-success bg-gradient">Nom</th>
+                                <th class="bg-success bg-gradient">Login</th>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </article>
             </div>
             <div class="">
@@ -65,12 +254,13 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div>
+    <footer class="bg-dark text-white" data-bs-theme="dark">
+        <div class="container">
             <p>
                 &copy; DAWAN - 11/2026
             </p>
         </div>
     </footer>
 </body>
+
 </html>
