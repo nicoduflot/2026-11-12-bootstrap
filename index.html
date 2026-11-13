@@ -13,6 +13,8 @@
     -->
     <link rel="stylesheet" href="./css/bootstrap.css" media="all" />
     <script language="javascript" src="./js/bootstrap.bundle.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" media="all" />
+
 </head>
 
 <body>
@@ -69,12 +71,12 @@
                 <ul>
                     <li><a href="#reboot-css">Reboot CSS</a></li>
                     <li><a href="#les-tableaux">Les tableaux</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#formulaires"></a></li>
                 </ul>
             </aside>
         </section>
-        <section>
-            <div class="">
+        <section class="row">
+            <div class="col-lg-6">
                 <article>
                     <header id="reboot-css">
                         <h2>Reboot CSS</h2>
@@ -101,7 +103,7 @@
                         Les <a href="#">liens</a> sont modifiés.
                     </p>
                     <p>
-                        Le séparateur horizontal : 
+                        Le séparateur horizontal :
                     </p>
                     <hr />
                     <p>
@@ -171,77 +173,145 @@
                     <figure>
                         <blockquote class="blockquote">
                             <p>
-                                <q cite="https://qqcitations.com/citation/147195">Marcher d’un même pas c'est l'objectif du despotisme et de la tyranie. Les hommes libres,
-                                eux, vont dans tout les sens.</q>
+                                <q cite="https://qqcitations.com/citation/147195">Marcher d’un même pas c'est l'objectif
+                                    du despotisme et de la tyranie. Les hommes libres,
+                                    eux, vont dans tout les sens.</q>
                             </p>
                         </blockquote>
                         <figcaption class="blockquote-footer">
-                            Seigneur Vétérini dans le roman<cite title='"la vérité" par Terry Pratchett'>"La vérité" de Terry Pratchett</cite>
+                            Seigneur Vétérini dans le roman<cite title='"la vérité" par Terry Pratchett'>"La vérité" de
+                                Terry Pratchett</cite>
                         </figcaption>
                     </figure>
                 </article>
             </div>
-            <div class="">
+            <div class="col-lg-6">
                 <article>
                     <header id="les-tableaux">
                         <h2>Les tableaux</h2>
                     </header>
                     <p>
-                        Le reboot css de Bootstrap règle les problèmes d'affichage des tableaux dûs au CSS du navigateur. En ajoutant la classe "table", la présentation de base est améliorée.
+                        Le reboot css de Bootstrap règle les problèmes d'affichage des tableaux dûs au CSS du
+                        navigateur. En ajoutant la classe "table", la présentation de base est améliorée.
                     </p>
-                    <table class="table table-success table-striped">
-                        <caption>Liste des users admin</caption>
-                        <thead>
+                    <div class="table-responsive">
+                        <table class="table table-success table-striped">
+                            <caption>Liste des users admin</caption>
+                            <thead>
+                                <tr>
+                                    <th>N°</th>
+                                    <th>Prénom</th>
+                                    <th>Nom</th>
+                                    <th>Login</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Nicolas</td>
+                                    <td>Duflot</td>
+                                    <td>nduflot</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Michel</td>
+                                    <td>Mulot</td>
+                                    <td>mmulot</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Darren</td>
+                                    <td>Arronosky</td>
+                                    <td>darronosky</td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Bugs</td>
+                                    <td>bunny</td>
+                                    <td>bbunny</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="bg-success bg-gradient">N°</th>
+                                    <th class="bg-success bg-gradient">Prénom</th>
+                                    <th class="bg-success bg-gradient">Nom</th>
+                                    <th class="bg-success bg-gradient">Login</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <p>
+                        Il suffite d'ajouter la classe "table-bordered" à la classe "table" pour ajouter des bordures au
+                        tableau.<br />
+                        Les couleurs de bordure suivent la même logique que les couleurs de tableau avec les mots-clefs
+                        de couleurs de bootstrap.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
                             <tr>
-                                <th>N°</th>
-                                <th>Prénom</th>
-                                <th>Nom</th>
-                                <th>Login</th>
+                                <th>un entête</th>
+                                <td>Une cellule</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td>Nicolas</td>
-                                <td>Duflot</td>
-                                <td>nduflot</td>
+                            <tr class="border-primary">
+                                <th>un entête primary</th>
+                                <td>Une cellule primary</td>
                             </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Michel</td>
-                                <td>Mulot</td>
-                                <td>mmulot</td>
+                            <tr class="border-dark">
+                                <th>un entête dark</th>
+                                <td>Une cellule dark</td>
                             </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Darren</td>
-                                <td>Arronosky</td>
-                                <td>darronosky</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td>Bugs</td>
-                                <td>bunny</td>
-                                <td>bbunny</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th class="bg-success bg-gradient">N°</th>
-                                <th class="bg-success bg-gradient">Prénom</th>
-                                <th class="bg-success bg-gradient">Nom</th>
-                                <th class="bg-success bg-gradient">Login</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                        </table>
+                    </div>
                 </article>
             </div>
-            <div class="">
+            <div class="col-lg-6">
                 <article>
-                    <header id="">
-                        <h2></h2>
+                    <header id="formulaires">
+                        <h2>Les formulaires</h2>
                     </header>
-                    <p></p>
+                    <p>
+                        Les formulaires comportent toute une liste de classes qui permettent de mettre facilement en
+                        forme
+                        les champs de saisie.<br />
+                        De plus, Bootstrap permet de customiser les contrôles de formulaires, et cela automatiquement
+                        grâce
+                        au JS, et à l'utilisation des classes adéquates.
+                    </p>
+                    <form class="row">
+                        <div class="col-sm-6">
+                            <label class="form-label" for="civilite">Civilité</label>
+                            <select id="civilite" name="civilite" class="form-select"  aria-describedby="info-civilite" required>
+                                <option selected>Choisir la civilité</option>
+                                <option value="N">Non applicable</option>
+                                <option value="H">Homme</option>
+                                <option value="F">Femme</option>
+                            </select>
+                            <div id="info-civilite" class="alert alert-info mt-1">
+                                <small>Indiquez votre civilité, ce champ est obligatoire</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" aria-describedby="info-email" required />
+                            <div id="info-email" class="alert alert-info mt-1">
+                                <small>Indiquez votre email, ce champ est obligatoire</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label">Votre situation</label>
+                            <br />
+                            <input type="radio" id="physique" value="physique" name="situation" class="form-check-input" aria-describedby="info-situation" checked /> 
+                            <label for="physique">Particulier</label>
+                            <br />
+                            <input type="radio" id="morale" value="morale" name="situation" class="form-check-input" aria-describedby="info-situation" /> 
+                            <label for="morale">Entreprise</label>
+                            
+                            <div id="info-situation" class="alert alert-info mt-1">
+                                <small>Indiquez si vous remplissez ce formulaire en tant que particulier ou au nom d'une institution</small>
+                            </div>
+                        </div>
+                    </form>
                 </article>
             </div>
             <div class="">
