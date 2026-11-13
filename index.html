@@ -41,23 +41,23 @@
             ...
         });
         */
-        window.addEventListener('DOMContentLoaded', ()=>{
+        window.addEventListener('DOMContentLoaded', () => {
             /*
             la forme ()(); permet décrire un fonction auto-éxécutée 
             */
             (
-                ()=>{
+                () => {
                     'use strict';
                     const forms = document.querySelectorAll('.needs-validation');
                     console.log(forms);
-                    forms.forEach((form)=>{
-                        form.addEventListener('submit', (event)=>{
-                            if(!form.checkValidity()){
+                    forms.forEach((form) => {
+                        form.addEventListener('submit', (event) => {
+                            if (!form.checkValidity()) {
                                 event.preventDefault();
                                 event.stopPropagation();
                             }
                             form.classList.add('was-validated');
-                        }, false);                        
+                        }, false);
                     });
                 }
             )();
@@ -120,11 +120,12 @@
                     <li><a href="#reboot-css">Reboot CSS</a></li>
                     <li><a href="#les-tableaux">Les tableaux</a></li>
                     <li><a href="#formulaires">Les formulaires</a></li>
+                    <li><a href="#media">Les media</a></li>
                 </ul>
             </aside>
         </section>
         <section class="row">
-            <div class="col-lg-6">
+            <div>
                 <article>
                     <header id="reboot-css">
                         <h2>Reboot CSS</h2>
@@ -329,7 +330,8 @@
                     <form class="row needs-validation" novalidate>
                         <div class="col-sm-6">
                             <label class="form-label" for="civilite">Civilité</label>
-                            <select id="civilite" name="civilite" class="form-select"  aria-describedby="info-civilite" required>
+                            <select id="civilite" name="civilite" class="form-select" aria-describedby="info-civilite"
+                                required>
                                 <option selected value="">Choisir la civilité</option>
                                 <option value="N">Non applicable</option>
                                 <option value="H">Homme</option>
@@ -347,7 +349,8 @@
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label" for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="name@company.com" aria-describedby="info-email" required />
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="name@company.com" aria-describedby="info-email" required />
                             <div id="info-email" class="alert alert-info mt-1">
                                 <small>Indiquez votre email, ce champ est obligatoire</small>
                             </div>
@@ -361,20 +364,24 @@
                         <div>
                             <label class="form-label">Votre situation</label>
                             <div class="form-check">
-                                <input type="radio" id="physique" value="physique" name="situation" class="form-check-input" aria-describedby="info-situation" checked /> 
+                                <input type="radio" id="physique" value="physique" name="situation"
+                                    class="form-check-input" aria-describedby="info-situation" checked />
                                 <label for="physique">Particulier</label>
-                            </div>    
+                            </div>
                             <div class="form-check">
-                                <input type="radio" id="morale" value="morale" name="situation" class="form-check-input" aria-describedby="info-situation" /> 
+                                <input type="radio" id="morale" value="morale" name="situation" class="form-check-input"
+                                    aria-describedby="info-situation" />
                                 <label for="morale">Entreprise</label>
                             </div>
                             <div id="info-situation" class="alert alert-info mt-1">
-                                <small>Indiquez si vous remplissez ce formulaire en tant que particulier ou au nom d'une institution</small>
+                                <small>Indiquez si vous remplissez ce formulaire en tant que particulier ou au nom d'une
+                                    institution</small>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label" for="nom">Nom</label>
-                            <input type="text" id="nom" name="nom" class="form-control" aria-describedby="info-nom" required />
+                            <input type="text" id="nom" name="nom" class="form-control" aria-describedby="info-nom"
+                                required />
                             <div class="valid-feedback">
                                 OK
                             </div>
@@ -387,17 +394,20 @@
                         </div>
                         <div class="col-sm-6">
                             <label class="form-label" for="prenom">Prénom</label>
-                            <input type="text" id="prenom" name="prenom" class="form-control" aria-describedby="info-prenom" />
+                            <input type="text" id="prenom" name="prenom" class="form-control"
+                                aria-describedby="info-prenom" />
                             <div id="info-prenom" class="alert alert-info mt-1">
                                 <small>Indiquez votre prénom, ce champ n'est pas obligatoire</small>
                             </div>
                         </div>
                         <div>
                             <div class="form-check">
-                                <input type="checkbox" id="opt01" name="opt01" class="form-check-input" value="opt01" /> <label for="opt01">Ajouter l'option 1</label>
+                                <input type="checkbox" id="opt01" name="opt01" class="form-check-input" value="opt01" />
+                                <label for="opt01">Ajouter l'option 1</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" id="opt02" name="opt02" class="form-check-input" value="opt02" /> <label for="opt01">Ajouter l'option 2</label>
+                                <input type="checkbox" id="opt02" name="opt02" class="form-check-input" value="opt02" />
+                                <label for="opt01">Ajouter l'option 2</label>
                             </div>
                         </div>
                         <div class="mb-1">
@@ -405,19 +415,124 @@
                             <textarea class="form-control" id="message" name="message"></textarea>
                         </div>
                         <div>
-                            <button class="btn btn-primary btn-sm" type="submit">Envoyer</button> 
-                            <button class="btn btn-outline-warning" type="reset">Effacer</button> 
-                            <button class="btn btn-secondary btn-lg" type="button">Bouton</button> 
+                            <button class="btn btn-primary btn-sm" type="submit">Envoyer</button>
+                            <button class="btn btn-outline-warning" type="reset">Effacer</button>
+                            <button class="btn btn-secondary btn-lg" type="button">Bouton</button>
                         </div>
                     </form>
                 </article>
             </div>
-            <div class="">
+            <div>
                 <article>
-                    <header id="">
-                        <h2></h2>
+                    <header id="media">
+                        <h2>Les media</h2>
                     </header>
-                    <p></p>
+                    <p>
+                        Pour rendre les media adaptatifs, Bootstrap propose des classes adaptées.
+                    </p>
+                    <p>
+                        Pour les images, la classe "img-fluid" permet d'afficher l'image jusqu'à 100%
+                        de sa largeur, mais elle ne s'affichera jamais plus grande que sa taille originale.
+                    </p>
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded"
+                            src="./images/Adventures_with_Sherlock_Holmes_TD_Gallery_Jan_5-Mar_10,_2012.jpg"
+                            alt="Sherlock Holmes lisant un message codé : 534 C2 13 127 36 31 4 17 21 41 DOUGLAS 109 293 5 37 BIRLSTONE 26 BIRLSTONE 9 47 171 dans le roman 'La vallée de la peur'"
+                            loading="lazy" decoding="async" />
+                        <figcaption class="figure-caption">
+                            Le message codé envoyé par Fred Porlock à Sherlock Holmes l'informant du Meurtre futur d'un
+                            certain Douglas à Birlstone.
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Il est aussi possible de combiner cette classe et la balise picture
+                    </p>
+                    <figure class="figure">
+                        <picture>
+                            <source media="(min-width: 992px)" srcset="./images/james-white-composite-800w.png" />
+                            <source media="(min-width: 576px)" srcset="./images/james-white-composite-400w.png" />
+                            <img class="figure-img img-fluid rounded" src="./images/james-white-composite-200w.png"
+                                alt="image compsite de 9 images" loading="lazy" decoding="async" />
+                        </picture>
+                        <figcaption class="figcaption">
+                            Composition de 9 illustrations par l'artiste James White
+                        </figcaption>
+                    </figure>
+                    <p class="clearfix">
+                        <img class="img-thumbnail float-start me-1"
+                            src="./images/batman-un-long-halloween-cover-art.jpg" width="100" />
+                        <img class="img-thumbnail float-end ms-1" src="./images/batman-b-timm-b-w.png" width="100" />
+                        Il est possible d'utiliser une classe qui met les images en mode "vignette", avec une petite
+                        bordure blanche autour et aussi de faire "flotter" cette vignette à gauche avec "float-start" ou
+                        à droite avec "float-end"
+                    </p>
+                    <p>
+                        On peut aussi centrer l'image à l'aide de la classe "mx-auto" et "d-block"
+                    </p>
+                    <img class="img-thumbnail mx-auto d-block"
+                        src="./images/DC-Comics-Batman-Caped-Crusader-official-cardboard-cutout-buy-now-at-starstills__04189.1582849820.jpg"
+                        width="100" />
+                    <div class="border border-danger mx-auto my-2" style="width: 300px;">
+                        <p>
+                            Classe <code>mx-auto</code> intégrée à un élément déjà en <code>display: block;</code> Une
+                            div.<br />
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quae excepturi, libero
+                            officia quis dignissimos natus sint maxime deleniti mollitia, ipsa maiores, debitis eveniet
+                            itaque soluta. Unde ut provident eius.
+                        </p>
+                    </div>
+                    <p>
+                        Les vidéos peuvent aussi être intégrées à l'aide de classe pour les rendre adaptatives.
+                    </p>
+                    <p>
+                        Si la vidéo est hébergé sur le site, on utilise la classe "img-fluid" dans la balise
+                        <code>&lt;video&gt;</code>
+                    </p>
+                    <figure class="figure">
+                        <video class="figure-img img-fluid" src="./media/video/Fallout-4-Launch-Trailer.mp4"
+                            controls></video>
+                        <figcaption class="figcaption">
+                            Trailer de lance du jeu vidéo Fallout 4
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <video class="figure-img img-fluid" controls>
+                            <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                            <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                        </video>
+                        <figcaption class="figcaption">
+                            Extrait du film d'animation "Big Buck Bunny"
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Dans le cas de vidéo hébergée sur une site tier, tels que youtube, viméo ou dailymotion, il
+                        faudra
+                        selon certain cas faire quelques ajustement.
+                    </p>
+                    <p>
+                        Les vidéos sont partagées grace à une balise <code>&lt;iframe&gt;</code> qui permet d'importer
+                        dans
+                        la page une autre page. Sur les sites d'hébergement de vidéos, une page particulière est
+                        partageable
+                        via une iframe, la vidéo est ensuite appelée dedans.
+                    </p>
+                    <h3>Youtube</h3>
+                    <p>
+                        Quand vous partager une vidéo youtube, vous obtenez généralement le code suivant :
+                    </p>
+                    <code><pre>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/j-Chh4SRjwE?si=uCwb_GBtQdvl2mHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;</pre></code>
+                    <p>
+                        Il est donc interressant d'utiliser une iframe mais qui sera encapsulée dans un conteneur, une
+                        figure, et à cette figure on ajoute deux classes bootstrap : ratio et ratio-16x9 par exemple
+                        pour
+                        une vidéo 16 / 9<sup>ème</sup>
+                    </p>
+                    <p>
+                        Dans cette figure, il suffit de coller l'iframe donnée par youtube en retirant les attributs
+                        width
+                        et height
+                    </p>
+                    <iframe class="img-fluid" src="https://www.youtube.com/embed/BHd8WNFtx9U?si=owgXJbhZ2uPJeCAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </article>
             </div>
         </section>
