@@ -14,7 +14,55 @@
     <link rel="stylesheet" href="./css/bootstrap.css" media="all" />
     <script language="javascript" src="./js/bootstrap.bundle.js" defer></script>
     <link rel="stylesheet" href="./css/style.css" media="all" />
-
+    <script>
+        let i = 0;
+        console.log(i); /* affiche 0 dans la console */
+        console.log(i++); /* affiche 0 dans la console puis ajoute 1 à i = 1 */
+        console.log(i); /* affiche 1 dans la console */
+        console.log(++i); /* ajoute 1 à i puis affiche le résultat 2 */
+        console.log(++i); /* ajoute 1 à i puis affiche le résultat 3 */
+        console.log(i = i + 1);
+        /*
+        const objet = {
+            toto: 'tata',
+            methode: ()=>
+            {
+                ...
+                return res;
+            },
+            autreMethode: (variable)=>
+            {
+                ...
+                return autreRes;
+            }
+        }
+        
+        objet.methode().autreMethode(function(variable){
+            ...
+        });
+        */
+        window.addEventListener('DOMContentLoaded', ()=>{
+            /*
+            la forme ()(); permet décrire un fonction auto-éxécutée 
+            */
+            (
+                ()=>{
+                    'use strict';
+                    const forms = document.querySelectorAll('.needs-validation');
+                    console.log(forms);
+                    forms.forEach((form)=>{
+                        form.addEventListener('submit', (event)=>{
+                            if(!form.checkValidity()){
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);                        
+                    });
+                }
+            )();
+        });
+    </script>
 </head>
 
 <body>
@@ -71,7 +119,7 @@
                 <ul>
                     <li><a href="#reboot-css">Reboot CSS</a></li>
                     <li><a href="#les-tableaux">Les tableaux</a></li>
-                    <li><a href="#formulaires"></a></li>
+                    <li><a href="#formulaires">Les formulaires</a></li>
                 </ul>
             </aside>
         </section>
@@ -278,17 +326,23 @@
                         grâce
                         au JS, et à l'utilisation des classes adéquates.
                     </p>
-                    <form class="row">
+                    <form class="row needs-validation" novalidate>
                         <div class="col-sm-6">
                             <label class="form-label" for="civilite">Civilité</label>
                             <select id="civilite" name="civilite" class="form-select"  aria-describedby="info-civilite" required>
-                                <option selected>Choisir la civilité</option>
+                                <option selected value="">Choisir la civilité</option>
                                 <option value="N">Non applicable</option>
                                 <option value="H">Homme</option>
                                 <option value="F">Femme</option>
                             </select>
                             <div id="info-civilite" class="alert alert-info mt-1">
                                 <small>Indiquez votre civilité, ce champ est obligatoire</small>
+                            </div>
+                            <div class="valid-feedback">
+                                OK
+                            </div>
+                            <div class="invalid-feedback">
+                                Veuillez choisir une civilité
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -297,19 +351,63 @@
                             <div id="info-email" class="alert alert-info mt-1">
                                 <small>Indiquez votre email, ce champ est obligatoire</small>
                             </div>
+                            <div class="valid-feedback">
+                                OK
+                            </div>
+                            <div class="invalid-feedback">
+                                Veuillez un email valide
+                            </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div>
                             <label class="form-label">Votre situation</label>
-                            <br />
-                            <input type="radio" id="physique" value="physique" name="situation" class="form-check-input" aria-describedby="info-situation" checked /> 
-                            <label for="physique">Particulier</label>
-                            <br />
-                            <input type="radio" id="morale" value="morale" name="situation" class="form-check-input" aria-describedby="info-situation" /> 
-                            <label for="morale">Entreprise</label>
-                            
+                            <div class="form-check">
+                                <input type="radio" id="physique" value="physique" name="situation" class="form-check-input" aria-describedby="info-situation" checked /> 
+                                <label for="physique">Particulier</label>
+                            </div>    
+                            <div class="form-check">
+                                <input type="radio" id="morale" value="morale" name="situation" class="form-check-input" aria-describedby="info-situation" /> 
+                                <label for="morale">Entreprise</label>
+                            </div>
                             <div id="info-situation" class="alert alert-info mt-1">
                                 <small>Indiquez si vous remplissez ce formulaire en tant que particulier ou au nom d'une institution</small>
                             </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" class="form-control" aria-describedby="info-nom" required />
+                            <div class="valid-feedback">
+                                OK
+                            </div>
+                            <div class="invalid-feedback">
+                                Veuillez indiquer votre nom de famille.
+                            </div>
+                            <div id="info-nom" class="alert alert-info mt-1">
+                                <small>Indiquez votre nom de famille, ce champ est obligatoire</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label" for="prenom">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" class="form-control" aria-describedby="info-prenom" />
+                            <div id="info-prenom" class="alert alert-info mt-1">
+                                <small>Indiquez votre prénom, ce champ n'est pas obligatoire</small>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input type="checkbox" id="opt01" name="opt01" class="form-check-input" value="opt01" /> <label for="opt01">Ajouter l'option 1</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="opt02" name="opt02" class="form-check-input" value="opt02" /> <label for="opt01">Ajouter l'option 2</label>
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <label for="message">Votre message</label>
+                            <textarea class="form-control" id="message" name="message"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary btn-sm" type="submit">Envoyer</button> 
+                            <button class="btn btn-outline-warning" type="reset">Effacer</button> 
+                            <button class="btn btn-secondary btn-lg" type="button">Bouton</button> 
                         </div>
                     </form>
                 </article>
