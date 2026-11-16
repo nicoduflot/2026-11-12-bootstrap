@@ -120,7 +120,10 @@
                     <li><a href="#reboot-css">Reboot CSS</a></li>
                     <li><a href="#les-tableaux">Les tableaux</a></li>
                     <li><a href="#formulaires">Les formulaires</a></li>
-                    <li><a href="#media">Les media</a></li>
+                    <li><a href="#media-images">Les media images</a></li>
+                    <li><a href="#video-hebergees">Vidéos hébergées</a></li>
+                    <li><a href="#videos-intergrees">Vidéo Intégrées</a></li>
+                    <li><a href="#audio-heberge">L'audio hébergé</a></li>
                 </ul>
             </aside>
         </section>
@@ -424,8 +427,8 @@
             </div>
             <div>
                 <article>
-                    <header id="media">
-                        <h2>Les media</h2>
+                    <header id="media-images">
+                        <h2>Les media images</h2>
                     </header>
                     <p>
                         Pour rendre les media adaptatifs, Bootstrap propose des classes adaptées.
@@ -481,6 +484,13 @@
                             itaque soluta. Unde ut provident eius.
                         </p>
                     </div>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article>
+                    <header>
+                        <h2 id="video-hebergees">Vidéos hébergées</h2>
+                    </header>
                     <p>
                         Les vidéos peuvent aussi être intégrées à l'aide de classe pour les rendre adaptatives.
                     </p>
@@ -488,14 +498,11 @@
                         Si la vidéo est hébergé sur le site, on utilise la classe "img-fluid" dans la balise
                         <code>&lt;video&gt;</code>
                     </p>
-                    <figure class="figure">
-                        <video class="figure-img img-fluid" src="./media/video/Fallout-4-Launch-Trailer.mp4"
-                            controls></video>
-                        <figcaption class="figcaption">
-                            Trailer de lance du jeu vidéo Fallout 4
-                        </figcaption>
+                    <figure class="figure bg-dark ratio ratio-16x9" style="max-width: 600px;">
+                        <video class="" src="./media/video/Fallout-4-Launch-Trailer.mp4" controls
+                            poster="./images/batman-un-long-halloween-cover-art.jpg"></video>
                     </figure>
-                    <figure class="figure">
+                    <figure class="figure bg-dark ratio ratio-16x9" style="max-width: 600px;">
                         <video class="figure-img img-fluid" controls>
                             <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
                             <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
@@ -504,6 +511,13 @@
                             Extrait du film d'animation "Big Buck Bunny"
                         </figcaption>
                     </figure>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article>
+                    <header>
+                        <h2 id="videos-intergrees">Vidéo Intégrées</h2>
+                    </header>
                     <p>
                         Dans le cas de vidéo hébergée sur une site tier, tels que youtube, viméo ou dailymotion, il
                         faudra
@@ -532,7 +546,108 @@
                         width
                         et height
                     </p>
-                    <iframe class="img-fluid" src="https://www.youtube.com/embed/BHd8WNFtx9U?si=owgXJbhZ2uPJeCAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Sans bootstrap, en retirant la hauteur et la largeur de l'iframe, on a la vidéo en petit format
+                        mais ce n'est pas efficace.
+                    </p>
+                    <iframe class="img-fluid" src="https://www.youtube.com/embed/BHd8WNFtx9U?si=owgXJbhZ2uPJeCAo"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Bootstrap propose des classes <code>ratio</code> qui permettent de gérer l'adaptabilité des
+                        iframes.
+                    </p>
+                    <figure class="figure ratio ratio-16x9" style="max-width: 600px;">
+                        <iframe src="https://www.youtube.com/embed/BHd8WNFtx9U?si=owgXJbhZ2uPJeCAo"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </figure>
+                </article>
+            </div>
+            <div class="col-lg-6">
+                <article>
+                    <header>
+                        <h2 id="audio-heberge">L'audio hébergé</h2>
+                    </header>
+                    <p>
+                        La balise <code>&lt;audio&gt;</code> permet d'afficher un media audio hébergé
+                    </p>
+                    <figure>
+                        <audio src="./media/audio/diablo_town.mp3" controls></audio>
+                    </figure>
+                    <p>
+                        Pour faire des lecteurs audio plus adaptés, il faudra utiliser des composants boutons et des
+                        icônes
+                        bootstrap ainsi que du Javascript afin de contrôler la lecture, la pause, le volume, etc.
+                    </p>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+                    <div class="container mt-5">
+                        <div class="card p-2 mb-3">
+                            <h3 class="card-title">En lecture</h3>
+                            <p class="card-body">Beastie Boys - Sure Shot</p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span id="currenTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <button role="button" id="playPauseBtn" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </button>
+                            </div>
+                            <script>
+                                /* Récupération des objets du DOM dans des constantes */
+                                const playPauseBtn = document.getElementById('playPauseBtn');
+                                const currenTime = document.getElementById('currenTime');
+                                const duration = document.getElementById('duration');
+                                const progressBar = document.querySelector('.progress-bar');
+                                /* Créer l'élément audio du DOM avec le fichier mp3 */
+                                const audio = new Audio('./media/audio/01 - Sure shot.mp3');
+                                /* un variable témoin de la lecture */
+                                let isPlaying = false;
+
+                                /* Fonction lecture / pause */
+                                function togglePlayPause(){
+                                    if(isPlaying){
+                                        audio.pause();
+                                        playPauseBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
+                                    }else {
+                                        audio.play();
+                                        playPauseBtn.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
+                                        /* alimenter la durée totale grace à  */
+                                        duration.innerText = formatTime(audio.duration);
+                                    }
+                                    isPlaying = !isPlaying;
+                                }
+                                
+                                /* convertir la durée en minutes:secondes pour l'affichage */
+                                function formatTime(seconds){
+                                    const minutes = Math.floor(seconds / 60);
+                                    const remainingSeconds = Math.floor(seconds % 60);
+                                    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+                                }
+
+                                /* fonction de mise à jour du progrès */
+                                function updateProgress(){
+                                    currenTime.textContent = formatTime(audio.currentTime);
+                                    const progress = (audio.currentTime / audio.duration) * 100;
+                                    /* console.log(`${progress}%`); */
+                                    progressBar.style.width = `${progress}%`;
+                                    progressBar.setAttribute('aria-valuenow', progress);
+                                }
+                                
+                                /* Intégration de la lecture / pause sur le bouton */
+                                playPauseBtn.addEventListener('click', togglePlayPause);
+                                /* mettre à jour le progrès du temps du fichier */
+                                audio.addEventListener('timeupdate', updateProgress);
+                                
+                            </script>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
